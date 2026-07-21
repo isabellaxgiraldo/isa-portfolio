@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isa Giraldo — Creative copy, editorial QC &amp; AI auditing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F0F1EA; --paper-white:#FAFAF6; --paper-2:#E7E9DF;
+    --ink:#17211C; --ink-soft:#3A443C; --muted:#6E756A; --line:#D3D6C9;
+    --verde:#1C6A4A; --verde-deep:#114A34; --flag:#B26A1E;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit;text-decoration:none}
+  .mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px}
+
+  nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--paper) 88%, transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{font-family:var(--mono);font-weight:500;letter-spacing:.14em;font-size:.8rem;text-transform:uppercase}
+  .navright{display:flex;align-items:center;gap:26px}
+  .navlinks{display:flex;gap:26px}
+  .navlinks a{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+  .navlinks a:hover,.navlinks a:focus-visible{color:var(--verde)}
+  .langtoggle{display:flex;gap:2px;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+  .lang-btn{font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;font-weight:500;padding:5px 9px;background:var(--paper-white);color:var(--muted);border:none;cursor:pointer;transition:background .2s,color .2s}
+  .lang-btn.active{background:var(--verde-deep);color:var(--paper-white)}
+
+  .hero{padding:100px 0 80px}
+  .eyebrow{color:var(--muted);margin-bottom:26px}
+  .eyebrow .dot{color:var(--verde);margin:0 6px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.5rem,6.2vw,4.9rem);line-height:1.03;letter-spacing:-.02em;max-width:16ch}
+  h1 em{font-style:italic;color:var(--verde-deep)}
+  .lede{margin-top:28px;max-width:54ch;font-size:1.2rem;color:var(--ink-soft);line-height:1.5}
+
+  .audit{margin-top:56px;background:var(--paper-white);border:1px solid var(--line);border-radius:2px;padding:26px 28px 28px;max-width:660px;box-shadow:0 1px 0 var(--line)}
+  .audit-head{display:flex;align-items:center;gap:10px;color:var(--muted);margin-bottom:18px}
+  .audit-head .tick{width:6px;height:6px;background:var(--flag);border-radius:50%;display:inline-block}
+  .audit-draft{font-size:1.14rem;line-height:1.8;color:var(--ink)}
+  .strike{position:relative;color:var(--muted);white-space:nowrap}
+  .strike::after{content:"";position:absolute;left:-2px;right:-2px;top:52%;height:1.5px;background:var(--flag);transform:scaleX(0);transform-origin:left;transition:transform .5s ease .3s}
+  .flagged .strike::after{transform:scaleX(1)}
+  .flag-tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.04em;text-transform:uppercase;color:var(--flag);border:1px solid color-mix(in srgb,var(--flag) 40%,var(--line));border-radius:2px;padding:2px 6px;margin-left:4px;white-space:nowrap;opacity:0;transition:opacity .4s ease .6s}
+  .flagged .flag-tag{opacity:1}
+  .audit-fix{margin-top:16px;padding-top:16px;border-top:1px solid var(--line);display:flex;gap:10px;align-items:flex-start;color:var(--verde-deep);font-size:1.02rem;opacity:0;transform:translateY(4px);transition:opacity .5s ease .9s,transform .5s ease .9s}
+  .flagged .audit-fix{opacity:1;transform:none}
+  .audit-fix .check{font-family:var(--mono);color:var(--verde);font-weight:500;flex:0 0 auto}
+
+  section{padding:76px 0;border-top:1px solid var(--line)}
+  .sec-label{color:var(--muted);margin-bottom:12px}
+  .sec-title{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,3.2vw,2.5rem);letter-spacing:-.015em;line-height:1.1;max-width:22ch}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1.35fr;gap:56px;align-items:start}
+  .about p{font-size:1.22rem;line-height:1.6;color:var(--ink-soft)}
+  .about p+p{margin-top:20px}
+
+  .work-context{color:var(--muted);margin-top:8px;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
+  .entries{margin-top:44px;border-top:1px solid var(--line)}
+  .entry{display:grid;grid-template-columns:210px 1fr;gap:40px;padding:34px 8px;border-bottom:1px solid var(--line);transition:background .25s ease}
+  .entry:hover{background:var(--paper-2)}
+  .entry.feature{background:linear-gradient(90deg,color-mix(in srgb,var(--verde) 8%,var(--paper)) 0%,var(--paper) 62%)}
+  .entry.feature:hover{background:linear-gradient(90deg,color-mix(in srgb,var(--verde) 12%,var(--paper)) 0%,var(--paper-2) 72%)}
+  .entry.feature .entry-cat{color:var(--verde-deep)}
+  .entry.feature-creative{background:linear-gradient(90deg,color-mix(in srgb,var(--flag) 9%,var(--paper)) 0%,var(--paper) 62%)}
+  .entry.feature-creative:hover{background:linear-gradient(90deg,color-mix(in srgb,var(--flag) 13%,var(--paper)) 0%,var(--paper-2) 72%)}
+  .entry.feature-creative .entry-cat{color:var(--flag)}
+  .entry-cat{color:var(--verde-deep);align-self:start}
+  .entry h3{font-family:var(--serif);font-weight:400;font-style:italic;font-size:1.5rem;line-height:1.2;letter-spacing:-.01em;margin-bottom:12px}
+  .entry p{color:var(--ink-soft);font-size:1.05rem;line-height:1.55;max-width:64ch}
+  .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:var(--mono);font-size:.64rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:2px;padding:3px 8px;background:var(--paper-white)}
+
+  .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:44px;background:var(--line)}
+  .principle{background:var(--paper);padding:30px 30px 34px}
+  .principle .pk{color:var(--verde-deep);margin-bottom:14px;display:block}
+  .principle h4{font-family:var(--serif);font-weight:500;font-size:1.28rem;letter-spacing:-.01em;margin-bottom:8px}
+  .principle p{color:var(--muted);font-size:1rem;line-height:1.5}
+
+  .contact .sec-title{max-width:28ch;margin-bottom:32px}
+  .contact-lines{display:flex;flex-direction:column;gap:2px}
+  .cline{display:flex;align-items:baseline;gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .cline .k{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);flex:0 0 140px}
+  .cline .v{font-size:1.14rem;color:var(--ink)}
+  .cline a.v{color:var(--verde-deep);border-bottom:1px solid transparent;transition:border-color .2s}
+  .cline a.v:hover{border-color:var(--verde-deep)}
+  .placeholder{color:var(--muted);font-style:italic}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 60px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+  footer .mono{color:var(--muted)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:760px){
+    body{font-size:17px}
+    .wrap{padding:0 22px}
+    .navlinks{display:none}
+    .hero{padding:64px 0 56px}
+    .about-grid{grid-template-columns:1fr;gap:28px}
+    .entry{grid-template-columns:1fr;gap:14px;padding:28px 4px}
+    .principles{grid-template-columns:1fr}
+    .cline{flex-direction:column;gap:4px}
+    .cline .k{flex-basis:auto}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none;transition:none}
+    .strike::after,.flag-tag,.audit-fix{transition:none}
+    .flagged .audit-fix{transform:none}
+  }
+  :focus-visible{outline:2px solid var(--verde);outline-offset:3px;border-radius:1px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Isa Giraldo</span>
+    <div class="navright">
+      <div class="navlinks">
+        <a href="#about" data-en="About" data-es="Perfil">About</a>
+        <a href="#work" data-en="Work" data-es="Trabajo">Work</a>
+        <a href="#how" data-en="How I work" data-es="Cómo trabajo">How I work</a>
+        <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+      </div>
+      <div class="langtoggle" role="group" aria-label="Language">
+        <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow mono reveal">
+      <span data-en="Creative copywriting" data-es="Copywriting creativo">Creative copywriting</span>
+      <span class="dot">·</span>
+      <span data-en="Editorial QC" data-es="Control editorial">Editorial QC</span>
+      <span class="dot">·</span>
+      <span data-en="AI content auditing" data-es="Auditoría de contenido con IA">AI content auditing</span>
+    </div>
+    <h1 class="reveal"><span data-en="I audit what AI writes — and " data-es="Audito lo que escribe la IA — y ">I audit what AI writes — and </span><em><span data-en="produce what it can't." data-es="creo lo que ella no puede.">produce what it can't.</span></em></h1>
+    <p class="lede reveal" data-en="Copywriter and editorial QC specialist. I write across creative brand work and EdTech content — higher education, K-12, and corporate learning — in two languages, across the Americas, the UK, and South Africa." data-es="Copywriter y especialista en control de calidad editorial. Escribo entre el trabajo creativo de marca y el contenido EdTech —educación superior, K-12 y formación corporativa— en dos idiomas, en las Américas, el Reino Unido y Sudáfrica.">Copywriter and editorial QC specialist. I write across creative brand work and EdTech content — higher education, K-12, and corporate learning — in two languages, across the Americas, the UK, and South Africa.</p>
+
+    <div class="audit reveal" id="audit">
+      <div class="audit-head"><span class="tick"></span><span class="mono" data-en="Sample audit" data-es="Auditoría de muestra">Sample audit</span></div>
+      <p class="audit-draft"><span data-en="AI draft: “Our platform lifted retention by " data-es="Borrador de IA: «Nuestra plataforma aumentó la retención en un ">AI draft: “Our platform lifted retention by </span><span class="strike" data-en="42%" data-es="42 %">42%</span><span class="flag-tag" data-en="⚑ unverifiable in source" data-es="⚑ sin fuente verificable">⚑ unverifiable in source</span><span data-en=" across " data-es=" en "> across </span><span class="strike" data-en="every" data-es="cada">every</span><span class="flag-tag" data-en="⚑ overclaim" data-es="⚑ afirmación exagerada">⚑ overclaim</span><span data-en=" partner institution.”" data-es=" institución aliada.»"> partner institution.”</span></p>
+      <div class="audit-fix"><span class="check">✓</span><span data-en="Rewritten to the figure the transcript actually supports — quoted verbatim, with an exact timestamp and a citation that holds up." data-es="Reescrito con la cifra que la transcripción realmente respalda: citado textualmente, con timestamp exacto y una fuente que se sostiene.">Rewritten to the figure the transcript actually supports — quoted verbatim, with an exact timestamp and a citation that holds up.</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="reveal">
+      <div class="sec-label mono" data-en="About" data-es="Perfil">About</div>
+      <div class="sec-title" data-en="Rigor is the differentiator." data-es="El rigor es la diferencia.">Rigor is the differentiator.</div>
+    </div>
+    <div class="about reveal">
+      <p data-en="I'm a Colombian (Vallecaucana) copywriter who works in two languages — planning in Spanish, delivering in English, and the reverse when the market calls for it." data-es="Soy una copywriter colombiana (vallecaucana) que trabaja en dos idiomas: planeo en español, entrego en inglés, y al revés cuando el mercado lo pide.">I'm a Colombian (Vallecaucana) copywriter who works in two languages — planning in Spanish, delivering in English, and the reverse when the market calls for it.</p>
+      <p data-en="My work spans creative copywriting, content production, editorial QC, and AI content auditing. What I keep coming back to is the part that's hard to automate: finding the line that sounds like no one else, and catching what generative tools get wrong." data-es="Mi trabajo abarca copywriting creativo, producción de contenido, control de calidad editorial y auditoría de contenido con IA. Siempre vuelvo a lo que cuesta automatizar: encontrar la frase que no suena como nadie más, y detectar lo que la IA hace mal.">My work spans creative copywriting, content production, editorial QC, and AI content auditing. What I keep coming back to is the part that's hard to automate: finding the line that sounds like no one else, and catching what generative tools get wrong.</p>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label mono" data-en="Selected work" data-es="Trabajo seleccionado">Selected work</div>
+      <div class="sec-title" data-en="What I've shipped." data-es="Lo que he entregado.">What I've shipped.</div>
+      <div class="work-context" data-en="Produced at 27zero · 2025–2026" data-es="Producido en 27zero · 2025–2026">Produced at 27zero · 2025–2026</div>
+    </div>
+
+    <div class="entries">
+      <article class="entry feature-creative reveal">
+        <div class="entry-cat mono" data-en="Creative copywriting" data-es="Copywriting creativo">Creative copywriting</div>
+        <div>
+          <h3 data-en="Words with a point of view" data-es="Palabras con punto de vista">Words with a point of view</h3>
+          <p data-en="Brand voice, concept lines, and narrative copy — the work where the job is to sound like no one else. [ Add your own creative pieces and personal projects here. ]" data-es="Voz de marca, líneas de concepto y copy narrativo: el trabajo donde el objetivo es no sonar como nadie más. [ Agrega aquí tus piezas creativas y proyectos personales. ]">Brand voice, concept lines, and narrative copy — the work where the job is to sound like no one else. [ Add your own creative pieces and personal projects here. ]</p>
+          <div class="tags"><span class="tag" data-en="Brand voice" data-es="Voz de marca">Brand voice</span><span class="tag" data-en="Concept" data-es="Concepto">Concept</span><span class="tag" data-en="Narrative" data-es="Narrativa">Narrative</span></div>
+        </div>
+      </article>
+
+      <article class="entry feature reveal">
+        <div class="entry-cat mono" data-en="AI content auditing" data-es="Auditoría de contenido con IA">AI content auditing</div>
+        <div>
+          <h3 data-en="Catching what generative tools get wrong" data-es="Detectar lo que la IA genera mal">Catching what generative tools get wrong</h3>
+          <p data-en="Audited AI-generated blog campaigns for fabricated statistics, hallucinated clients, competitor links passed off as citations, exposed platform artifacts, and brand-voice drift — then rewrote each piece to meet E-E-A-T and credible-sourcing standards." data-es="Auditoría de campañas de blogs generadas con IA en busca de estadísticas inventadas, clientes alucinados, enlaces de la competencia colados como fuentes, artefactos de plataforma expuestos y desviaciones de la voz de marca; luego, reescritura de cada pieza para cumplir con E-E-A-T y fuentes creíbles.">Audited AI-generated blog campaigns for fabricated statistics, hallucinated clients, competitor links passed off as citations, exposed platform artifacts, and brand-voice drift — then rewrote each piece to meet E-E-A-T and credible-sourcing standards.</p>
+          <div class="tags"><span class="tag" data-en="EdTech SEO" data-es="SEO EdTech">EdTech SEO</span><span class="tag" data-en="QA · rewrite" data-es="QA · reescritura">QA · rewrite</span><span class="tag" data-en="E-E-A-T" data-es="E-E-A-T">E-E-A-T</span></div>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <div class="entry-cat mono" data-en="Content production" data-es="Producción de contenido">Content production</div>
+        <div>
+          <h3 data-en="A recurring interview series — and the social around it" data-es="Una serie de entrevistas — y lo social a su alrededor">A recurring interview series — and the social around it</h3>
+          <p data-en="Produced full deliverable packages across multiple episodes — highlight videos, social clips, LinkedIn carousels, and editorial articles — plus LinkedIn campaigns and monthly newsletters, each built to its platform and carried from draft to client sign-off." data-es="Producción de paquetes completos de entregables a lo largo de varios episodios —videos destacados, clips sociales, carruseles de LinkedIn y artículos editoriales—, además de campañas de LinkedIn y newsletters mensuales, cada una construida para su plataforma y llevada del borrador a la aprobación del cliente.">Produced full deliverable packages across multiple episodes — highlight videos, social clips, LinkedIn carousels, and editorial articles — plus LinkedIn campaigns and monthly newsletters, each built to its platform and carried from draft to client sign-off.</p>
+          <div class="tags"><span class="tag" data-en="Multi-format" data-es="Multiformato">Multi-format</span><span class="tag" data-en="LinkedIn" data-es="LinkedIn">LinkedIn</span><span class="tag" data-en="Newsletters" data-es="Newsletters">Newsletters</span></div>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <div class="entry-cat mono" data-en="Editorial QC &amp; localization" data-es="Control editorial y localización">Editorial QC &amp; localization</div>
+        <div>
+          <h3 data-en="Rigor in two languages" data-es="Rigor en dos idiomas">Rigor in two languages</h3>
+          <p data-en="Ran translation QA on Spanish-language event materials and proofreading passes against staging builds — flagging lexical mismatches, structural gaps, and live placeholder text before anything reached publication." data-es="Control de calidad de traducción en materiales de eventos en español y revisiones contra versiones en staging, señalando desajustes léxicos, vacíos de estructura y texto de relleno visible antes de que algo llegara a publicarse.">Ran translation QA on Spanish-language event materials and proofreading passes against staging builds — flagging lexical mismatches, structural gaps, and live placeholder text before anything reached publication.</p>
+          <div class="tags"><span class="tag" data-en="ES ⇄ EN" data-es="ES ⇄ EN">ES ⇄ EN</span><span class="tag" data-en="Localization QA" data-es="QA de localización">Localization QA</span><span class="tag" data-en="Proofreading" data-es="Corrección">Proofreading</span></div>
+        </div>
+      </article>
+
+      <article class="entry reveal">
+        <div class="entry-cat mono" data-en="Content strategy &amp; web" data-es="Estrategia de contenido y web">Content strategy &amp; web</div>
+        <div>
+          <h3 data-en="Structure before copy" data-es="Estructura antes que copy">Structure before copy</h3>
+          <p data-en="Built case-study pages and website portfolio copy grounded in founder interviews, mapped content elements to reusable page templates, and standardized CTAs around specific, on-brand language rather than generic phrasing." data-es="Construcción de páginas de casos de estudio y copy de portafolio web a partir de entrevistas con fundadores, mapeo de elementos de contenido a plantillas reutilizables y estandarización de CTAs con lenguaje específico y on-brand en vez de frases genéricas.">Built case-study pages and website portfolio copy grounded in founder interviews, mapped content elements to reusable page templates, and standardized CTAs around specific, on-brand language rather than generic phrasing.</p>
+          <div class="tags"><span class="tag" data-en="Case studies" data-es="Casos de estudio">Case studies</span><span class="tag" data-en="Web copy" data-es="Copy web">Web copy</span><span class="tag" data-en="CTAs" data-es="CTAs">CTAs</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label mono" data-en="How I work" data-es="Cómo trabajo">How I work</div>
+      <div class="sec-title" data-en="Standards I don't bend on." data-es="Estándares que no negocio.">Standards I don't bend on.</div>
+    </div>
+    <div class="principles">
+      <div class="principle reveal">
+        <span class="pk mono" data-en="01 — Quotes" data-es="01 — Citas">01 — Quotes</span>
+        <h4 data-en="Verbatim, timestamped" data-es="Textual y con timestamp">Verbatim, timestamped</h4>
+        <p data-en="Direct quotes stay exact, anchored to the timestamp they came from. No paraphrasing a quote, no invented language." data-es="Las citas directas se mantienen exactas, ancladas al timestamp de donde salen. Sin parafrasear citas, sin lenguaje inventado.">Direct quotes stay exact, anchored to the timestamp they came from. No paraphrasing a quote, no invented language.</p>
+      </div>
+      <div class="principle reveal">
+        <span class="pk mono" data-en="02 — Sources" data-es="02 — Fuentes">02 — Sources</span>
+        <h4 data-en="Citations that hold up" data-es="Fuentes que se sostienen">Citations that hold up</h4>
+        <p data-en="E-E-A-T and credible sourcing, checked against the original. If a claim can't be verified, it doesn't ship." data-es="E-E-A-T y fuentes creíbles, verificadas contra el original. Si una afirmación no se puede comprobar, no se publica.">E-E-A-T and credible sourcing, checked against the original. If a claim can't be verified, it doesn't ship.</p>
+      </div>
+      <div class="principle reveal">
+        <span class="pk mono" data-en="03 — Format" data-es="03 — Formato">03 — Format</span>
+        <h4 data-en="Native to the channel" data-es="Nativo del canal">Native to the channel</h4>
+        <p data-en="Copy is built for the platform it lives on — its length, its constraints, its rhythm — not pasted in from somewhere else." data-es="El copy se construye para la plataforma donde vive —su extensión, sus límites, su ritmo—, no se pega desde otro lado.">Copy is built for the platform it lives on — its length, its constraints, its rhythm — not pasted in from somewhere else.</p>
+      </div>
+      <div class="principle reveal">
+        <span class="pk mono" data-en="04 — Language" data-es="04 — Idioma">04 — Language</span>
+        <h4 data-en="Bilingual by default" data-es="Bilingüe por defecto">Bilingual by default</h4>
+        <p data-en="Spanish and English, moving between the two without losing meaning, tone, or structure along the way." data-es="Español e inglés, pasando de uno a otro sin perder significado, tono ni estructura en el camino.">Spanish and English, moving between the two without losing meaning, tone, or structure along the way.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-label mono" data-en="Contact" data-es="Contacto">Contact</div>
+      <div class="sec-title" data-en="Working on something? Let's talk." data-es="¿Tienes algo entre manos? Hablemos.">Working on something? Let's talk.</div>
+    </div>
+    <div class="contact-lines reveal">
+      <div class="cline"><span class="k" data-en="Email" data-es="Correo">Email</span><span class="v placeholder" data-en="[ add your email ]" data-es="[ agrega tu correo ]">[ add your email ]</span></div>
+      <div class="cline"><span class="k" data-en="LinkedIn" data-es="LinkedIn">LinkedIn</span><span class="v placeholder" data-en="[ add your profile URL ]" data-es="[ agrega la URL de tu perfil ]">[ add your profile URL ]</span></div>
+      <div class="cline"><span class="k" data-en="Based in" data-es="Ubicación">Based in</span><span class="v" data-en="Colombia · working across the Americas, UK &amp; South Africa" data-es="Colombia · trabajando en las Américas, Reino Unido y Sudáfrica">Colombia · working across the Americas, UK &amp; South Africa</span></div>
+      <div class="cline"><span class="k" data-en="Languages" data-es="Idiomas">Languages</span><span class="v" data-en="Spanish (native) · English (professional)" data-es="Español (nativo) · Inglés (profesional)">Spanish (native) · English (professional)</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="mono">© 2026 Isa Giraldo</span>
+    <span class="mono" data-en="Creative copy · Editorial QC · AI auditing" data-es="Copy creativo · Control editorial · Auditoría con IA">Creative copy · Editorial QC · AI auditing</span>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var t = el.getAttribute('data-' + lang);
+      if(t !== null) el.textContent = t;
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el,i){
+    el.style.transitionDelay = Math.min(i,6)*40 + 'ms';
+    io.observe(el);
+  });
+
+  var audit = document.getElementById('audit');
+  var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if(reduce){ audit.classList.add('flagged'); }
+  else{
+    var ao = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ setTimeout(function(){audit.classList.add('flagged');},450); ao.unobserve(e.target); } });
+    },{threshold:.4});
+    ao.observe(audit);
+  }
+</script>
+</body>
+</html>
