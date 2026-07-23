@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Isabella Giraldo — Creative copy, editorial QC &amp; AI auditing</title>
+<title>Isa Giraldo — Creative copy, editorial QC &amp; AI auditing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#F0F1EA; --paper-white:#FAFAF6; --paper-2:#E7E9DF;
@@ -157,6 +158,12 @@
   .car-dots{position:absolute;bottom:14px;left:0;right:0;display:flex;gap:7px;justify-content:center}
   .car-dot{width:7px;height:7px;border-radius:50%;border:none;background:color-mix(in srgb,var(--ink) 28%,transparent);cursor:pointer;padding:0;transition:background .2s,transform .2s}
   .car-dot.active{background:var(--paper-white);box-shadow:0 0 0 1px var(--ink);transform:scale(1.15)}
+  .cadence-blog{background:#f4efe4;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+  .cadence-blog ::selection{background:#12463a;color:#f4efe4}
+  .cadence-blog a{color:#12463a;text-decoration:none}
+  .cadence-blog a:hover{color:#d97742}
+  .cadence-blog .article-body p{margin:0 0 22px}
+  .cadence-blog .article-body p:first-of-type::first-letter{font-family:'Fraunces',Georgia,serif;font-weight:600;float:left;font-size:74px;line-height:.72;padding:8px 12px 0 0;color:#12463a}
   .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
 
@@ -192,7 +199,7 @@
 
 <nav>
   <div class="wrap">
-    <span class="brand">Isabella Giraldo</span>
+    <span class="brand">Isa Giraldo</span>
     <div class="navright">
       <div class="navlinks">
         <a href="#about" data-en="About" data-es="Perfil">About</a>
@@ -281,7 +288,7 @@ Link in bio.</p>
     <div class="reveal">
       <div class="sec-label mono" data-en="Selected work" data-es="Trabajo seleccionado">Selected work</div>
       <div class="sec-title" data-en="What I've shipped." data-es="Lo que he entregado.">What I've shipped.</div>
-      <div class="work-context" data-en="Produced · 2025–2026" data-es="Producido · 2025–2026">Produced · 2025–2026</div>
+      <div class="work-context" data-en="2025–2026" data-es="2025–2026">2025–2026</div>
     </div>
 
     <div class="creative-list">
@@ -387,8 +394,8 @@ Link in bio.</p>
       <div class="sec-title" data-en="Working on something? Let's talk." data-es="¿Tienes algo entre manos? Hablemos.">Working on something? Let's talk.</div>
     </div>
     <div class="contact-lines reveal">
-      <div class="cline"><span class="k" data-en="Email" data-es="Correo">Email</span><span class="v placeholder" data-en="isabellaxgiraldo@gmail.com" data-es="isabellaxgiraldo@gmail.com">isabellaxgiraldo@gmail.com</span></div>
-      <div class="cline"><span class="k" data-en="LinkedIn" data-es="LinkedIn">LinkedIn</span><span class="v placeholder" data-en="www.linkedin.com/in/isabellaxgiraldo" data-es="www.linkedin.com/in/isabellaxgiraldo">www.linkedin.com/in/isabellaxgiraldo</span></div>
+      <div class="cline"><span class="k" data-en="Email" data-es="Correo">Email</span><a class="v" href="mailto:isabellaxgiraldo@gmail.com" data-en="isabellaxgiraldo@gmail.com" data-es="isabellaxgiraldo@gmail.com">isabellaxgiraldo@gmail.com</a></div>
+      <div class="cline"><span class="k" data-en="LinkedIn" data-es="LinkedIn">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/isabellaxgiraldo" target="_blank" rel="noopener" data-en="linkedin.com/in/isabellaxgiraldo" data-es="linkedin.com/in/isabellaxgiraldo">linkedin.com/in/isabellaxgiraldo</a></div>
       <div class="cline"><span class="k" data-en="Based in" data-es="Ubicación">Based in</span><span class="v" data-en="Colombia · working across the Americas, UK &amp; South Africa" data-es="Colombia · trabajando en las Américas, Reino Unido y Sudáfrica">Colombia · working across the Americas, UK &amp; South Africa</span></div>
       <div class="cline"><span class="k" data-en="Languages" data-es="Idiomas">Languages</span><span class="v" data-en="Spanish (native) · English (professional)" data-es="Español (nativo) · Inglés (profesional)">Spanish (native) · English (professional)</span></div>
     </div>
@@ -397,7 +404,7 @@ Link in bio.</p>
 
 <footer>
   <div class="wrap">
-    <span class="mono">© 2026 Isabella Giraldo</span>
+    <span class="mono">© 2026 Isa Giraldo</span>
     <span class="mono" data-en="Creative copy · Editorial QC · AI auditing" data-es="Copy creativo · Control editorial · Auditoría con IA">Creative copy · Editorial QC · AI auditing</span>
   </div>
 </footer>
@@ -419,9 +426,130 @@ Link in bio.</p>
 </template>
 <template id="src-cadence">
   <div class="m-cat mono" data-en="Blog post · Cadence" data-es="Blog post · Cadence">Blog post · Cadence</div>
-  <h3 class="m-title">You don't have a budget problem. You have a Tuesday problem.</h3>
   <p class="m-brief" data-en="Brief: reframe “I can't save” as a habits problem, not a willpower problem." data-es="Brief: reencuadrar el “no sé ahorrar” como un problema de hábitos, no de fuerza de voluntad.">Brief: reencuadrar el “no sé ahorrar” como un problema de hábitos, no de fuerza de voluntad.</p>
-    <iframe class="m-iframe" src="cadence-blog.pdf" title="Cadence — blog post"></iframe>
+  <div class="cadence-blog">
+<div style="min-height:100%;background:#f4efe4;font-family:'Newsreader',Georgia,serif;color:#211d16;">
+
+  <!-- top meta strip -->
+  <div style="max-width:720px;margin:0 auto;padding:40px 32px 0;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#12463a;">
+      <span style="width:9px;height:9px;border-radius:2px;background:#d97742;display:inline-block;transform:rotate(45deg);"></span>
+      Cadence
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#8a8272;">
+      The Ledger · Habits
+    </div>
+  </div>
+
+  <!-- hero -->
+  <header style="max-width:720px;margin:0 auto;padding:52px 32px 0;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:#d97742;margin-bottom:26px;">
+      Behavioral money
+    </div>
+    <h1 style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:58px;line-height:1.02;letter-spacing:-0.02em;margin:0 0 26px;color:#12463a;text-wrap:balance;">
+      You don't have a budget problem. You have a Tuesday problem.
+    </h1>
+    <p style="font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:23px;line-height:1.5;color:#5c5545;margin:0 0 36px;text-wrap:pretty;">
+      Why the 3pm coffee, the impulse cart, and the "I earned this" Friday quietly run your money — and how to design around them instead of fighting them.
+    </p>
+    <div style="display:flex;align-items:center;gap:16px;padding:18px 0;border-top:1px solid #ddd5c2;border-bottom:1px solid #ddd5c2;">
+      <div style="width:42px;height:42px;border-radius:50%;background:#12463a;color:#f4efe4;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:18px;">M</div>
+      <div style="flex:1;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;color:#211d16;">Isabella Giraldo</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;color:#8a8272;letter-spacing:0.04em;">Behavioral marketing lead at Cadence</div>
+      </div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:12px;color:#8a8272;letter-spacing:0.06em;text-transform:uppercase;">4 min read</div>
+    </div>
+  </header>
+
+  <!-- abstract graphic band -->
+  <div style="max-width:720px;margin:40px auto 0;padding:0 32px;">
+    <div style="position:relative;height:180px;border-radius:14px;overflow:hidden;background:#12463a;">
+      <div style="position:absolute;inset:0;background-image:repeating-linear-gradient(90deg, rgba(244,239,228,0.10) 0 1px, transparent 1px 52px);"></div>
+      <div style="position:absolute;bottom:0;left:0;right:0;height:120px;display:flex;align-items:flex-end;gap:14px;padding:0 30px;">
+        <div style="flex:1;height:34%;background:rgba(244,239,228,0.16);border-radius:4px 4px 0 0;"></div>
+        <div style="flex:1;height:52%;background:rgba(244,239,228,0.16);border-radius:4px 4px 0 0;"></div>
+        <div style="flex:1;height:30%;background:rgba(244,239,228,0.16);border-radius:4px 4px 0 0;"></div>
+        <div style="flex:1;height:78%;background:#d97742;border-radius:4px 4px 0 0;"></div>
+        <div style="flex:1;height:44%;background:rgba(244,239,228,0.16);border-radius:4px 4px 0 0;"></div>
+        <div style="flex:1;height:62%;background:rgba(244,239,228,0.16);border-radius:4px 4px 0 0;"></div>
+        <div style="flex:1;height:88%;background:#d97742;border-radius:4px 4px 0 0;"></div>
+        <div style="flex:1;height:40%;background:rgba(244,239,228,0.16);border-radius:4px 4px 0 0;"></div>
+        <div style="flex:1;height:58%;background:rgba(244,239,228,0.16);border-radius:4px 4px 0 0;"></div>
+      </div>
+      <div style="position:absolute;top:20px;left:30px;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(244,239,228,0.7);">Spending, by day of week</div>
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11.5px;letter-spacing:0.04em;color:#8a8272;margin-top:10px;text-align:center;">Every week has two spikes. Yours have names.</div>
+  </div>
+
+  <!-- body -->
+  <article class="article-body" style="max-width:640px;margin:0 auto;padding:48px 32px 0;font-size:20px;line-height:1.62;color:#2a251c;">
+
+    <p>Willpower is a terrible accountant. It shows up strong on January 1st and quietly resigns by the 9th. The people who actually save money aren't more disciplined than you — they've just made the good decision the easy one, and moved the hard one out of reach.</p>
+
+    <p>We tend to treat saving as a character test. Spend less, want less, try harder. But look at your own statement and the story isn't about character at all. It's about calendar. The same purchases, the same times, the same moods. Not a budget you failed to follow — a pattern you never designed.</p>
+
+    <blockquote style="margin:38px 0;padding:0 0 0 24px;border-left:3px solid #d97742;font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:29px;line-height:1.28;letter-spacing:-0.01em;color:#12463a;font-style:normal;">
+      "You don't overspend because you're weak. You overspend because the moment was built for it."
+    </blockquote>
+
+    <h2 style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:30px;line-height:1.15;letter-spacing:-0.015em;color:#12463a;margin:44px 0 18px;">Willpower is a battery, not a virtue</h2>
+
+    <p>Every "no" you say costs something. Say enough of them and by evening the battery's flat — which is exactly why the impulse cart wins at 9pm and never at 9am. This isn't a flaw in you; it's the design of the day. The trick isn't to carry a bigger battery. It's to spend fewer charges on decisions you could have made once, in advance.</p>
+
+    <div style="display:flex;align-items:center;gap:20px;background:#12463a;border-radius:14px;padding:26px 28px;margin:36px 0;">
+      <div style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:52px;line-height:1;color:#d97742;">73%</div>
+      <div style="font-family:'Newsreader',serif;font-size:16px;line-height:1.45;color:#e8e2d2;">of discretionary spending clusters into just <strong style="color:#fff;">three recurring moments</strong> each week — the same coffee, cart, and Friday, on repeat.</div>
+    </div>
+
+    <h2 style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:30px;line-height:1.15;letter-spacing:-0.015em;color:#12463a;margin:44px 0 18px;">Design around your three triggers</h2>
+
+    <p>You don't need forty rules. You need to name the two or three moments that actually move the needle, then quietly engineer them so the easy path is the one you'd have chosen anyway.</p>
+
+    <ol style="list-style:none;counter-reset:step;padding:0;margin:28px 0 8px;">
+      <li style="counter-increment:step;position:relative;padding:0 0 26px 62px;">
+        <span style="position:absolute;left:0;top:2px;width:42px;height:42px;border-radius:10px;background:#f4efe4;border:1.5px solid #12463a;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:18px;color:#12463a;">1</span>
+        <strong style="display:block;font-family:'Fraunces',serif;font-weight:600;font-size:21px;color:#211d16;margin-bottom:4px;">The 3pm coffee → make it automatic, not optional.</strong>
+        <span>Pre-decide the ritual. A set weekly coffee budget that refills on its own beats forty small "should I?" negotiations you'll lose by Thursday.</span>
+      </li>
+      <li style="counter-increment:step;position:relative;padding:0 0 26px 62px;">
+        <span style="position:absolute;left:0;top:2px;width:42px;height:42px;border-radius:10px;background:#f4efe4;border:1.5px solid #12463a;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:18px;color:#12463a;">2</span>
+        <strong style="display:block;font-family:'Fraunces',serif;font-weight:600;font-size:21px;color:#211d16;margin-bottom:4px;">The impulse cart → add friction, not guilt.</strong>
+        <span>Move the card out of the browser. A 24-hour hold on anything over $40 turns most "I earned this" buys into "I forgot about this."</span>
+      </li>
+      <li style="counter-increment:step;position:relative;padding:0 0 4px 62px;">
+        <span style="position:absolute;left:0;top:2px;width:42px;height:42px;border-radius:10px;background:#f4efe4;border:1.5px solid #12463a;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:18px;color:#12463a;">3</span>
+        <strong style="display:block;font-family:'Fraunces',serif;font-weight:600;font-size:21px;color:#211d16;margin-bottom:4px;">The Friday reward → keep it, but fund it first.</strong>
+        <span>You've earned it — so pay yourself before the treat, not after. Move savings on Friday morning, and reward with what's left, guilt-free.</span>
+      </li>
+    </ol>
+
+    <h2 style="font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:30px;line-height:1.15;letter-spacing:-0.015em;color:#12463a;margin:44px 0 18px;">Fight less, arrange more</h2>
+
+    <p>Notice what none of that required: more grit. You didn't get stronger — you moved the good decision closer and the bad one further away. That's the whole game. Saving isn't a war of willpower you keep re-fighting every Tuesday. It's a room you arrange once so the easy path and the smart path are the same path.</p>
+
+    <p>So stop grading your character. Look at your week instead. Find the two or three moments that quietly run your money, and design them so future-you doesn't have to be a hero — just has to show up.</p>
+
+    <!-- soft CTA -->
+    <div style="margin:52px 0 0;padding:34px 32px;background:#fff;border:1px solid #ddd5c2;border-radius:16px;text-align:center;">
+      <div style="font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#d97742;margin-bottom:12px;">Try it with Cadence</div>
+      <p style="font-family:'Fraunces',serif;font-weight:500;font-size:23px;line-height:1.3;color:#12463a;margin:0 0 22px;">Cadence spots your three moments automatically — and quietly designs around them.</p>
+      <a href="#" style="display:inline-flex;align-items:center;gap:8px;background:#12463a;color:#f4efe4;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:14px;letter-spacing:0.04em;padding:14px 26px;border-radius:10px;">Find your Tuesdays →</a>
+    </div>
+
+  </article>
+
+  <!-- footer -->
+  <footer style="max-width:640px;margin:56px auto 0;padding:28px 32px 64px;border-top:1px solid #ddd5c2;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:#12463a;">
+      <span style="width:8px;height:8px;border-radius:2px;background:#d97742;display:inline-block;transform:rotate(45deg);"></span>
+      Cadence
+    </div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11.5px;letter-spacing:0.06em;color:#8a8272;">© 2026 · Money, minus the willpower.</div>
+  </footer>
+
+</div>
+  </div>
 </template>
 <template id="src-miga">
   <div class="m-cat mono" data-en="Rebrand · Video · Miga" data-es="Rebrand · Video · Miga">Rebrand · Video · Miga</div>
